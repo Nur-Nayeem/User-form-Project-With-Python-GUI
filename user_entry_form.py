@@ -7,11 +7,16 @@ root.resizable(False,False)
 lvl=Label(root,text="User Entry Form",font=("times new roman",25,"bold"),bg="lightblue").place(relwidth=1)
 
 def get_data():
-    if var_chk.get()==1:
-        result="USER NAME: "+var_name.get()+"\n EMAIL: "+var_email.get()+"\n GENDER: "+var_gnder.get()
-        lvl_result.config(text=str(result))
+    if var_name.get()=="" or var_email.get()=="":
+        lvl_result.config(text="Please Fill the Name and Email block")
     else:
-        lvl_result.config(text="Please Accept the turm and conditions")
+        if var_chk.get()==1:
+            result="USER NAME: "+var_name.get()+"\n EMAIL: "+var_email.get()+"\n GENDER: "+var_gnder.get()
+            lvl_result.config(text=str(result))
+        else:
+            lvl_result.config(text="Please Accept the turm and conditions")
+        
+    
     
 
 username=Label(root,text="User Name",font=("times new roman",20)).place(x=20,y=60)
